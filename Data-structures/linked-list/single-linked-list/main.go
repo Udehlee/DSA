@@ -73,10 +73,48 @@ func (l *LinkedList) Append(v int) {
 	for currentHead.next != nil {
 		currentHead = currentHead.next
 	}
-
 	currentHead.next = newAdd
 }
 
+//search in a single list can only be done in one direction
+//
+func (l *LinkedList) isPresent(value int) bool {
+	toPrint := l.head
+
+	for toPrint != nil {
+		if toPrint.value == value {
+			return true
+		}
+
+		toPrint = toPrint.next
+	}
+
+	return false
+}
+
+//delete first element in linked list
+func (l *LinkedList) DeleteFirstElement() (int, bool) {
+	if l.isEmpty() {
+		return 0, false
+	}
+
+	value := l.head.value
+	l.head = l.head.next
+	l.count--
+	return value, true
+
+}
+
+//delete from the list any value
+func (l *LinkedList) DeleteAny(v int) {
+	node := l.head
+
+	for node.next.value != v {
+		node = node.next
+	}
+	node.next = node.next.next
+	l.count--
+}
 func main() {
 
 	list := &LinkedList{}
@@ -91,5 +129,12 @@ func main() {
 	list.Append(23)
 	list.Append(24)
 	list.Append(25)
+	list.PrintLinkedList()
+
+	//delete first element
+	list.DeleteFirstElement()
+	list.PrintLinkedList()
+
+	list.DeleteAny(24)
 	list.PrintLinkedList()
 }
