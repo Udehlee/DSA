@@ -15,7 +15,6 @@ type Node struct {
 }
 
 //size of the list
-
 func (l *LinkedList) size() int {
 	return l.count
 }
@@ -115,6 +114,25 @@ func (l *LinkedList) DeleteAny(v int) {
 	node.next = node.next.next
 	l.count--
 }
+
+//reserve a single linked list
+func (l *LinkedList) ReverseList() {
+
+	var prev *Node
+	var next *Node
+
+	currentHead := l.head
+
+	for currentHead != nil {
+		next = currentHead.next
+		currentHead.next = prev
+		prev = currentHead
+		currentHead = next
+	}
+	l.head = prev
+
+}
+
 func main() {
 
 	list := &LinkedList{}
@@ -132,9 +150,12 @@ func main() {
 	list.PrintLinkedList()
 
 	//delete first element
-	list.DeleteFirstElement()
-	list.PrintLinkedList()
+	// list.DeleteFirstElement()
+	// list.PrintLinkedList()
 
-	list.DeleteAny(24)
+	// list.DeleteAny(24)
+	// list.PrintLinkedList()
+
+	list.ReverseList()
 	list.PrintLinkedList()
 }
