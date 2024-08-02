@@ -10,6 +10,7 @@ import (
 // if the value givn is less than the middle number, move towards the startNum
 // if the value given is more than the middle number move towards the endNum
 func BinarySearch(data []int, val int) bool {
+
 	startNum := 0
 	endNum := len(data) - 1
 
