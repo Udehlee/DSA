@@ -36,7 +36,6 @@ func (l *DoublyLinkedList) Prepend(v int) {
 
 //PrintLinkedList prints the entire list
 func (l *DoublyLinkedList) PrintLinkedList() {
-
 	toPrint := l.head
 
 	for toPrint != nil {

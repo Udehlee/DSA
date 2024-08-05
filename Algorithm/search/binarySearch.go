@@ -23,7 +23,6 @@ func BinarySearch(data []int, val int) bool {
 			startNum++
 		} else {
 			endNum--
-
 		}
 	}
 	return false
@@ -44,10 +43,10 @@ func FindElement2DArray(data [][]int, row, col, val int) bool {
 		} else {
 			row++
 		}
-
 	}
 	return false
 }
+
 func main() {
 
 	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}

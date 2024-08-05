@@ -9,7 +9,6 @@ type stack struct {
 // push adds value to the stack
 func (s *stack) Push(value int) {
 	s.arr = append(s.arr, value)
-
 }
 
 // pop removes value from the stack
@@ -17,7 +16,6 @@ func (s *stack) Pop() int {
 	toRemove := s.arr[len(s.arr)-1]
 	s.arr = s.arr[:len(s.arr)-1]
 	return toRemove
-
 }
 
 func (s *stack) Print() {

@@ -30,6 +30,7 @@ func selectionSort(arr []int) {
 		arr[i], arr[min] = arr[min], arr[i]
 	}
 }
+
 func main() {
 
 	data := []int{20, 9, 1, 8, 18, 2, 7, 15, 3, 6, 4, 5}
