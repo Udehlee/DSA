@@ -47,10 +47,23 @@ func FindElement2DArray(data [][]int, row, col, val int) bool {
 	return false
 }
 
+func FirstNumberToBeRepeated(data []int) int {
+
+	for i := 0; i < len(data); i++ {
+		for j := i + 1; j < len(data); j++ {
+			if data[i] == data[j] {
+				return data[i]
+			}
+		}
+	}
+	return 0
+}
+
 func main() {
 
-	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	s := []int{1, 2, 3, 3, 3, 4, 5, 6, 7, 7, 7, 8, 9}
 
 	fmt.Println(BinarySearch(s, 2))
+	fmt.Println(FirstNumberToBeRepeated(s))
 
 }
