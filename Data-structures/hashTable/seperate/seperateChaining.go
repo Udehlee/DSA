@@ -8,12 +8,16 @@ type HashTable struct {
 }
 
 type Node struct {
-	value int
-	next  *Node
+	key  string
+	next *Node
 }
 
-func (h *HashTable) Hash(key int) int {
-	return key % h.size
+func (h *HashTable) Hash(key string) int {
+	hash := 0
+	for _, v := range key {
+		hash = int(v) % h.size
+	}
+	return hash
 }
 
 func (h *HashTable) Init(size int) *HashTable {
@@ -25,43 +29,43 @@ func (h *HashTable) Init(size int) *HashTable {
 	return h
 }
 
-func (h *HashTable) Add(value int) {
-	index := h.Hash(value)
+func (h *HashTable) Add(key string) {
+	index := h.Hash(key)
 	curr := new(Node)
-	curr.value = value
+	curr.key = key
 	curr.next = h.arr[index]
 	h.arr[index] = curr
 }
 
-func (h *HashTable) Search(value int) (int, bool) {
-	index := h.Hash(value)
+func (h *HashTable) Search(key string) (string, bool) {
+	index := h.Hash(key)
 	head := h.arr[index]
 	for head != nil {
-		if head.value == value {
-			return head.value, true
+		if head.key == key {
+			return head.key, true
 		}
 		head = head.next
 	}
-	return 0, false
+	return "", false
 }
 
 func (h *HashTable) Print() {
 	for i := 0; i < len(h.arr); i++ {
 		node := h.arr[i]
 		for node != nil {
-			fmt.Println(node.value)
+			fmt.Println(node.key)
 			node = node.next
 		}
 	}
 }
 
 func main() {
-	h := new(HashTable)
+	h := &HashTable{}
 	h.Init(30)
-	h.Add(34)
-	h.Add(54)
+	h.Add("peter")
+	h.Add("ada")
 	h.Print()
-	result, found := h.Search(34)
+	result, found := h.Search("peter")
 	fmt.Printf("found %v, result: %v\n", found, result)
 
 }
