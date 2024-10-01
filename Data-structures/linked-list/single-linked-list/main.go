@@ -29,7 +29,6 @@ func (l *LinkedList) isEmpty() bool {
 //place the new node to the linkedlist head
 //new Node points to old head
 func (l *LinkedList) Prepend(v int) {
-
 	currentHead := l.head
 	newAdd := &Node{
 		value: v,
@@ -44,7 +43,6 @@ func (l *LinkedList) Prepend(v int) {
 
 //PrintLinkedList prints the entire list
 func (l *LinkedList) PrintLinkedList() {
-
 	toPrint := l.head
 
 	for toPrint != nil {
@@ -56,7 +54,6 @@ func (l *LinkedList) PrintLinkedList() {
 
 // add at the end of the list
 // add new node if there is no node in the current head
-
 func (l *LinkedList) Append(v int) {
 	currentHead := l.head
 
@@ -76,7 +73,6 @@ func (l *LinkedList) Append(v int) {
 }
 
 //search in a single list can only be done in one direction
-//
 func (l *LinkedList) isPresent(value int) bool {
 	toPrint := l.head
 
@@ -117,7 +113,6 @@ func (l *LinkedList) DeleteAny(v int) {
 
 //reserve a single linked list
 func (l *LinkedList) ReverseList() {
-
 	var prev *Node
 	var next *Node
 
