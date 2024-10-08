@@ -112,6 +112,7 @@ func (l *LinkedList) DeleteAny(v int) {
 }
 
 //reserve a single linked list
+
 func (l *LinkedList) ReverseList() {
 	var prev *Node
 	var next *Node
