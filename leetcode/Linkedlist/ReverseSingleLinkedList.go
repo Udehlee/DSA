@@ -26,7 +26,6 @@ func iterative(head *node) *node {
 func recursive(node *node) *node {
 	if node == nil || node.next == nil {
 		return node
-
 	}
 
 	reverseList := recursive(node.next)
@@ -34,7 +33,6 @@ func recursive(node *node) *node {
 	node.next = nil
 
 	return reverseList
-
 }
 
 func Print(node *node) {
