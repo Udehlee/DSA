@@ -1,10 +1,5 @@
 package linkedlist
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func getDecimalValue(head *ListNode) int {
 	output := 0
 

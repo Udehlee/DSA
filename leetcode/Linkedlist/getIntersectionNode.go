@@ -1,10 +1,5 @@
 package linkedlist
 
-type ListNode struct {
-	value int
-	next  *ListNode
-}
-
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	slowPtr := headA
 	fastPtr := headB
@@ -13,13 +8,13 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 		if slowPtr == nil {
 			slowPtr = headB
 		} else {
-			slowPtr = slowPtr.next
+			slowPtr = slowPtr.Next
 		}
 
 		if fastPtr == nil {
 			fastPtr = headA
 		} else {
-			fastPtr = fastPtr.next
+			fastPtr = fastPtr.Next
 		}
 
 	}

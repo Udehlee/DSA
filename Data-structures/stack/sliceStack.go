@@ -6,6 +6,11 @@ type stack struct {
 	arr []int
 }
 
+func (s *stack) add(v int) {
+	s.arr = append(s.arr, v)
+
+}
+
 // push adds value to the stack
 func (s *stack) Push(value int) {
 	s.arr = append(s.arr, value)
