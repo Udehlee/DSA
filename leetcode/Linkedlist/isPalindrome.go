@@ -4,7 +4,7 @@ package linkedlist
 // reverselist
 // comparelist
 func isPalindrome(head *ListNode) bool {
-	if head == nil && head.Next == nil {
+	if head == nil || head.Next == nil {
 		return true
 	}
 
